@@ -1,0 +1,52 @@
+<script type="text/javascript" src="js/googleInfo.js"></script>
+<script src="https://apis.google.com/js/client.js?onload=init"></script>
+ <script src = "https://plus.google.com/js/client:platform.js" async defer></script>
+<div class="jumbotron text-center">
+    
+    <h1><font color="red">multiPost</font></h1>
+    <p>Share content to several social medias at once!</p>
+    <p class="lead" style="font-weight: bolder"><h3>About me</h3><br>Email: {{getEmail()}}{{email}} <br> Name: {{name}}</p>
+    <form ng-submit="addPost()">
+        <textarea placeholder="Enter what you want to share here..." name="quote" rows="4" cols="50" ng-model="title"></textarea>
+        <br>
+        <input type="image" src="./images/sharenow.png" alt="Submit Form"/>
+    </form>
+
+    </br>
+    
+</div>
+</br>
+
+<div class="jumbotron text-center">
+    <h2><font color="red">My Posts</font></h2>
+    <div ng-repeat="post in myPosts">
+        <br>
+        <h4>Post Number:{{post._id}}</h4>
+        <br>
+        ************************************************************
+        <br>
+        {{post.title}}
+        <br>
+        ************************************************************
+        <br>
+        <form ng-submit="editPost(post)" ng-controller="multiPostController">
+            <input type="text" placeholder='Enter edit here' ng-model="edit" ng-trim="false"/>
+            <button type="submit">Edit Post</button>
+        </form>
+        <button ng-click="deletePost(post)" >Delete Post</button>
+        <br>
+        <br>
+    </div>
+</div>
+
+<!--
+    
+    <form ng-submit="addPost()">
+        <input type="text" ng-model="title"></input>
+        <textarea placeholder="Enter what you want to share here..." name="quote" rows="4" cols="50" ng-model="title"></textarea>
+        <img src="./images/sharenow.png" onclick="submit"/>
+        <input type="image" src="./images/sharenow.png" alt="Submit Form"/>
+        <button type="submit">Post</button>
+    </form>
+
+-->

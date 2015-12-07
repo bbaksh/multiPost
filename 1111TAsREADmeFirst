@@ -1,0 +1,11 @@
+Hi Hassan and Manar
+
+In order to make this run on your cloud nine you must do the following:
+
+1. in the terminal run: mongod --smallfiles
+
+The reason for this is that i have a problem with my db ( i think its corrupt...)
+
+2. Run the server.js 
+
+3. go to the link: https://lab4-bbaksh.c9users.io/
